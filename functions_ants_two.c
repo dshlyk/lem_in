@@ -119,23 +119,14 @@ static int				go_ants_two(t_path_ants_list *result_ants, int *ant,
 void					go_ants(t_path_ants_list *result_ants, t_var *var)
 {
 	int					last_ant;
-	int					flag;
-	int					flag2;
 
 	last_ant = 1;
-	flag2 = 0;
 	train(result_ants, var);
 	while (1)
 	{
-		flag = go_ants_two(result_ants, &last_ant, var);
+		go_ants_two(result_ants, &last_ant, var);
 		if (check_ants_out(result_ants))
 			break ;
-		if (var->ants == last_ant)
-		{
-			flag2 = 1;
-			write(1, "\n", 1);
-		}
-		if ((flag2 != 1 || flag != 1) && (var->ants != last_ant))
-			write(1, "\n", 1);
+		write(1, "\n", 1);
 	}
 }
