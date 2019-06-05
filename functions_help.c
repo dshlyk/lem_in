@@ -47,7 +47,7 @@ int				end_search(t_room *anthill)
 
 void			ft_error(int x)
 {
-	ft_printf("ERROR %d\n", x);
+	ft_printf("ERROR\n", x);
 	exit(1);
 }
 
